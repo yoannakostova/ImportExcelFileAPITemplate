@@ -28,6 +28,7 @@ namespace ImportExcelFileTemplate.Controllers
                 var file = HttpContext.Request.Form.Files[0];
 
                 var stream = file.OpenReadStream();
+                _logger.LogInformation("Extracting fata from file...");
 
                 var importedData = FileReader.ExtractDataFromStream(stream);
 
